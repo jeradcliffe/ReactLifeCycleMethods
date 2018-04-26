@@ -3,18 +3,22 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import PropTypes from 'prop-types';
 
+import Header from './components/common/header';
 import Home from './components/homePage';
 import About from './components/about/aboutPage';
-import Header from "./common/header";
+import Authors from './components/authors/authorPage';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
     render() {
         let ChildComponent;
 
-        switch(this.props.route) {
+        switch (this.props.route) {
             case 'about':
                 ChildComponent = About;
+                break;
+            case 'authors':
+                ChildComponent = Authors;
                 break;
             default:
                 ChildComponent = Home;
@@ -23,8 +27,8 @@ class App extends Component {
 
         return (
             <div>
-                <Header />
-                <ChildComponent />
+                <Header/>
+                <ChildComponent/>
             </div>
         );
     }
@@ -34,8 +38,8 @@ class App extends Component {
 const renderApp = () => {
     // Take piece of the URL
     let route = window.location.hash.substr(1);
-    render (
-        <App route={route} />,
+    render(
+        <App route={route}/>,
         document.getElementById('app')
     );
 };

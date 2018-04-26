@@ -12,7 +12,7 @@ let _clone = function(item) {
     return JSON.parse(JSON.stringify(item)); //return cloned copy so that the item is passed by value instead of by reference
 };
 
-const AuthorApi = {
+let AuthorApi = {
     getAllAuthors: function() {
         return _clone(authors);
     },
@@ -46,4 +46,4 @@ const AuthorApi = {
     }
 };
 
-module.exports = AuthorApi;
+export default AuthorApi;
