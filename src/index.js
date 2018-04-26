@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Home from './components/homePage';
 import About from './components/about/aboutPage';
+import Header from "./common/header";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
 
         return (
             <div>
+                <Header />
                 <ChildComponent />
             </div>
         );
